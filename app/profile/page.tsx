@@ -23,7 +23,7 @@ const MyProfile = () => {
     const [posts, setPosts] = useState<Prompt[]>([]);
 
     const handleEdit = (post: Prompt): any => {
-        router.push(`/update-prompt/?id=${post._id}`);
+        router.push(`/update-prompt?id=${post._id}`);
     };
     const handleDelete = async (post: Prompt): Promise<void> => {
         const hasConfirmed = confirm('Are you sure you want to delete ?');
