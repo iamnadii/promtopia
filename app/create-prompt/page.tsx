@@ -10,8 +10,13 @@ interface PostType {
     prompt: string;
     tag: string;
 }
+interface PromptData {
+    prompt: string;
+    userId?: string | null;
+    tag: string;
+}
 const CreatePrompt = () => {
-    const { data: session } = useSession();
+    const { data: session }: { data: any } = useSession();
     const router = useRouter();
     const [submitting, setSubmitting] = useState<boolean>(false);
     const [post, setPost] = useState<PostType>({
@@ -28,7 +33,7 @@ const CreatePrompt = () => {
                 method: 'POST',
                 body: JSON.stringify({
                     prompt: post.prompt,
-                    userId: session?.user?.id,
+                    userId: session?.user.id,
                     tag: post.tag,
                 }),
             });
