@@ -18,7 +18,7 @@ interface Prompt {
 interface PromptCardProps {
     key: string;
     post: Prompt;
-    handleTagClick?: (tag: string) => {};
+    handleTagClick?: (tag: string) => void;
     handleEdit?: () => {};
     handleDelete?: () => {};
 }
@@ -86,7 +86,9 @@ const PromptCard: React.FC<PromptCardProps> = ({
             <p
                 className="font-inter text-sm blue_gradient cursor-pointer"
                 onClick={() => {
-                    handleTagClick(post.tag);
+                    if (handleTagClick && post && post.tag) {
+                        handleTagClick(post.tag);
+                    }
                 }}
             >
                 #{post.tag}

@@ -20,7 +20,7 @@ const PromptCardList = ({
     handleTagClick,
 }: {
     data: Prompt[];
-    handleTagClick: (tag: string) => {};
+    handleTagClick: (tag: string) => void;
 }) => {
     return (
         <div className="mt-16 prompt_layout">
@@ -69,7 +69,7 @@ const Feed = () => {
         );
     };
 
-    const handleTagClick = (tag: string) => {
+    const handleTagClick = (tag: string): void => {
         setSearchText(tag);
 
         const searchedPromptsByTag = filteredPosts(tag);

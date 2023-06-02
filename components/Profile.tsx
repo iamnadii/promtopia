@@ -16,8 +16,8 @@ interface ProfileProps {
     name: string | null;
     desc: string;
     data: Prompt[];
-    handleEdit?: (post: Prompt) => {};
-    handleDelete?: (post: Prompt) => {};
+    handleEdit?: (post: Prompt) => any;
+    handleDelete?: (post: Prompt) => any;
 }
 const Profile: React.FC<ProfileProps> = ({
     name,
